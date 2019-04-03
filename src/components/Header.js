@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ class Header extends Component {
      <nav>
       <div className="nav-wrapper blue darken-2">
         <Link 
-          to={this.props.auth ? '/templates' : '/'} 
+          to={this.props.auth ? '/dashboard' : '/'} 
           className="left brand-logo"
         >
           Onboarding

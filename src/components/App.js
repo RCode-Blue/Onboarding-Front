@@ -5,10 +5,13 @@ import * as actions from '../actions';
 
 import Header from './Header';
 import Landing from './Landing';
-const Dashboard = () => <h2>Dashboard</h2>;
+import Dashboard from './Dashboard';
+import TemplateList from './templates/TemplatePositions';
+
+
 const TemplateNew = () => <h2>TemplateNew</h2>;
 
-// const Landing = () => <h2>Landing</h2>
+const TempComp = (props) => console.log(props) || <h2>Template tasks</h2>
 
 class App extends Component {
   componentDidMount() {
@@ -22,7 +25,8 @@ class App extends Component {
           <div>
             <Header />
             <Route exact path="/" component={Landing} />
-            <Route exact path="/templates" component={Dashboard} />
+            <Route exact path = "/dashboard" component={Dashboard} />
+            <Route exact path = "/dashboard/templates/:id/tasks" component={TemplateList} />
             <Route path="/templates/new" component={TemplateNew}/>
           </div>
         </BrowserRouter>
