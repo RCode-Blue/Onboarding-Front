@@ -24,16 +24,16 @@ class TemplateList extends Component {
           <div>
             
             <p 
-              onClick={() => {
-                // console.log("template.id: " + template.id);
-                // console.log(this.props);
+              // onClick={() => {
+              //   this.setState({
+              //     template_id: template.id
+              //   });
+              //   this.props.history.push(`/dashboard/templates/${template.id}/tasks`)
+              // }
+              // }
 
-                this.setState({
-                  template_id: template.id
-                });
+              onClick = {() => this.props.clickTemplate(template)}
 
-                this.props.history.push(`/dashboard/templates/${template.id}/tasks`)
-              }}
               className="card-title">{template.template_name}
             </p>
 
@@ -57,20 +57,22 @@ class TemplateList extends Component {
 }
 
 
-function mapStateToProps({state, templates}){
+function mapStateToProps({templates}){
   // console.log(state);
-  return { templates: templates };
+  return { templates };
 }
 
 
 function mapDispatchToProps(dispatch){
-  return bindActionCreators({ selectTemplate: selectTemplate }, dispatch)
+  return bindActionCreators(
+    { clickTemplate: selectTemplate }, dispatch
+  );
 }
 
-//                                                            action          component
-//                                                              |                 |
-export default connect(mapStateToProps, mapDispatchToProps, { getTemplates })(TemplateList);
-// export default connect(mapStateToProps, { getTemplates })(TemplateList);
+//                                                                action          component
+//                                                                  |                 |
+// export default connect(mapStateToProps, mapDispatchToProps, { getTemplates })(TemplateList);
+export default connect(mapStateToProps, { getTemplates })(TemplateList);
 // #endregion
 
 

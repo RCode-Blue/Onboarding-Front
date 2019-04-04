@@ -11,7 +11,7 @@ import TemplateList from './templates/TemplatePositions';
 
 const TemplateNew = () => <h2>TemplateNew</h2>;
 
-const TempComp = (props) => console.log(props) || <h2>Template tasks</h2>
+// const TempComp = (props) => console.log(props) || <h2>Template tasks</h2>
 
 class App extends Component {
   componentDidMount() {
