@@ -14,28 +14,13 @@ export const getTemplates = () => async dispatch => {
 };
 
 
-
-
 export const getTemplatePositions = (_id) => async dispatch => {
-  console.log('_id:');
-  console.log(_id);
+  // const queryString = '/api/template?template_id=' + _id;
+  // const res = await axios.get(queryString);
+  const res = await axios.get('/api/template?template_id='+_id);
 
-  // const res = await axios.get('/api/template', {
-  //   params:{
-  //     template_id: _id}
-  // });
-
-  // const res = await axios.get('/api/template?template_id=' + _id);
-  const queryString = '/api/template?template_id=' + _id;
-  console.log(queryString);
-
-  const res = await axios.get(queryString);
-
-  console.log(res); 
-  dispatch({ type: GET_TEMPLATE_POSITIONS , payload: res.data.positions });
-}
+  // console.log(res.data);
+  dispatch({ type: GET_TEMPLATE_POSITIONS, payload: res.data });
+};
 
 
-export const selectTemplate = (template) => {
-  console.log('A template has been clicked:', template.template_name);
-}

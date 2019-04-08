@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-
-import { getTemplates, selectTemplate } from '../../actions';
-
+import { getTemplates, getTemplatePositions } from '../../actions';
 
 // #region
 class TemplateList extends Component {   
@@ -17,30 +14,32 @@ class TemplateList extends Component {
     // console.log(this.props.templates);
     return this.props.templates.map(template => {
       // console.log(template);
+      const templateUrl = `/dashboard/templates/${template.id}/tasks`;
+
       return(
-        <div 
-          className="card-darken-1" 
-          key={template.id}>
-          <div>
-            
-            <p 
-              // onClick={() => {
-              //   this.setState({
-              //     template_id: template.id
-              //   });
-              //   this.props.history.push(`/dashboard/templates/${template.id}/tasks`)
-              // }
-              // }
-
-              onClick = {() => this.props.clickTemplate(template)}
-
-              className="card-title">{template.template_name}
-            </p>
-
-            <p className="card-content">
-              {template.description}
-            </p>
-            
+        <div
+        key={template.id}>
+          <div className="card-content">
+            <div className="row deep-orange lighten-5">
+              <div className="col s12">
+                
+                <ul 
+                className="card-title"
+                onClick = {() => {
+                  this.props.getTemplatePositions(template.id);
+                  this.props.history.push(`/dashboard/templates/${template.id}/tasks`);
+                }}>
+                  {template.template_name}
+                </ul>
+                
+                <div>
+                  <p>
+                  {template.description}
+                  </p>
+                </div>
+                
+              </div>
+            </div>
           </div>
         </div>
       );
@@ -57,24 +56,11 @@ class TemplateList extends Component {
 }
 
 
-function mapStateToProps({templates}){
-  // console.log(state);
-  return { templates };
+function mapStateToProps(state){
+  // console.log({templates});
+  return { templates: state.templates };
 }
 
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators(
-    { clickTemplate: selectTemplate }, dispatch
-  );
-}
+export default connect(mapStateToProps, { getTemplates, getTemplatePositions })(TemplateList);
 
-//                                                                action          component
-//                                                                  |                 |
-// export default connect(mapStateToProps, mapDispatchToProps, { getTemplates })(TemplateList);
-export default connect(mapStateToProps, { getTemplates })(TemplateList);
-// #endregion
-
-
-
-// #region

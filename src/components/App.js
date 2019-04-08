@@ -6,7 +6,7 @@ import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import TemplateList from './templates/TemplatePositions';
+import TemplateList from './templates/CurrentTemplate';
 
 
 const TemplateNew = () => <h2>TemplateNew</h2>;
