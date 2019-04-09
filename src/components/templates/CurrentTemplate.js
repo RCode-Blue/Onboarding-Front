@@ -11,15 +11,32 @@ class TemplateTasks extends Component {
     this.props.getTemplatePositions(this.props.match.params.id);
   }
 
+  renderTemplateInfo(){
+    console.log(this.props);
+    return (
+      <div className="card-title">
+        <div className="row deep-orange darken-4">
+            <div style={{color: "white"}}>
+              <h5>{this.props.currentTemplate.description}</h5>
+            </div>
+        </div>
+      </div>
+    )
+  }
 
   renderTemplateTasks(){
     // console.log(this.props.currentTemplate);
 
     return this.props.currentTemplate.positions.map((position) => {
       return (
-          <li key={position.position_id}>
-            {position.task_description}
-          </li>
+        <div key={position.position_id}
+        className="card-content">
+            <div className="col s12">
+              <div key={position.position_id}>
+                <ul> {position.task_description} </ul>
+              </div>
+            </div>
+        </div>
       );
     });
 
@@ -39,7 +56,12 @@ class TemplateTasks extends Component {
 
     return(
       <div>
-        {this.renderTemplateTasks()}
+        <div>
+          {this.renderTemplateInfo()}
+        </div>
+        <div>
+          {this.renderTemplateTasks()}
+        </div>
       </div>
     );
   }
