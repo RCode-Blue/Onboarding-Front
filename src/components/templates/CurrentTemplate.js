@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import { getTemplatePositions } from '../../actions';
 
-// import { createStore } from 'redux';
 
 
 class TemplateTasks extends Component {
@@ -12,7 +12,7 @@ class TemplateTasks extends Component {
   }
 
   renderTemplateInfo(){
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className="card-title">
         <div className="row deep-orange darken-4">
@@ -32,9 +32,7 @@ class TemplateTasks extends Component {
         <div key={position.position_id}
         className="card-content">
             <div className="col s12">
-              <div key={position.position_id}>
-                <ul> {position.task_description} </ul>
-              </div>
+              <ul> {position.task_description} </ul>
             </div>
         </div>
       );

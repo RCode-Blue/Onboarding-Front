@@ -7,14 +7,16 @@ import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import TemplateList from './templates/CurrentTemplate';
+import SetsList from './sets/Sets';
 
 
 const TemplateNew = () => <h2>TemplateNew</h2>;
 
-// const TempComp = (props) => console.log(props) || <h2>Template tasks</h2>
 
 class App extends Component {
+
   componentDidMount() {
+    // console.log(this.props);
     this.props.fetchUser();
   }
 
@@ -27,6 +29,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path = "/dashboard" component={Dashboard} />
             <Route exact path = "/dashboard/templates/:id/tasks" component={TemplateList} />
+            <Route exact path = "/tasklist" component={SetsList} />
             <Route path="/templates/new" component={TemplateNew}/>
           </div>
         </BrowserRouter>
