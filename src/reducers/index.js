@@ -4,12 +4,22 @@ import authReducer from './authReducer';
 import templateReducer from './templateReducer';
 import currentTemplateReducer from './currentTemplateReducer';
 import setsReducer from './setsReducer';
-import currentSetTasklistReducer from './currentSetTasklistReducer';
+import getSetReducer from './getSetReducer';
+import userDetailsReducer from './userDetailsReducer';
+import managerDetailsReducer from './managerDetailsReducer';
+import buddyDetailsReducer from './buddyDetailsReducer';
+import instructorDetailsReducer from './instructorDetailsReducer';
+
+
 
 export default combineReducers({
   auth: authReducer,
   templates: templateReducer,
   currentTemplate: currentTemplateReducer,
   sets: setsReducer,
-  tasks: currentSetTasklistReducer
+  set: getSetReducer,
+  user: userDetailsReducer,
+  manager: managerDetailsReducer,
+  buddy: buddyDetailsReducer,
+  instructor: instructorDetailsReducer
   });

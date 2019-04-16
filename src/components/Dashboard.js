@@ -6,7 +6,7 @@ const Dashboard = (props) => {
   // console.log(props)
   return(
     <div>
-      <TemplateList {...props} />
+      <TemplateList/>
     </div>
   );
 };

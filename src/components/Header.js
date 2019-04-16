@@ -40,7 +40,7 @@ class Header extends Component {
             </li>
             <li id="nav-sets">
               <a 
-              href="/tasklist"
+              href="/tasklists"
               onClick = {() => {
                 this.props.getSets(this.props.auth.user_id)
               }}>

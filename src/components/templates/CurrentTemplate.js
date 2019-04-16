@@ -25,15 +25,19 @@ class TemplateTasks extends Component {
   }
 
   renderTemplateTasks(){
-    // console.log(this.props.currentTemplate);
+    console.log(this.props);
 
     return this.props.currentTemplate.positions.map((position) => {
       return (
         <div key={position.position_id}
-        className="card-content">
-            <div className="col s12">
-              <ul> {position.task_description} </ul>
+        className="card-stacked">
+          <div className="card-content">
+            <div className="row green lighten-5">
+              <div className="col s12">
+                <ul> {position.position_no}.   {position.task_description} </ul>
+              </div>
             </div>
+          </div>
         </div>
       );
     });
@@ -49,7 +53,7 @@ class TemplateTasks extends Component {
       // console.log("loading");
       return(
         <div>Loading...</div>
-      )
+      );
     }
 
     return(

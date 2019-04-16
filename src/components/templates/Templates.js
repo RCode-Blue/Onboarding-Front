@@ -28,8 +28,7 @@ class TemplateList extends Component {
                   href={templateUrl}
                   className="card-title"
                   onClick = {() => {
-                    this.props.getTemplatePositions(template.id);
-                    // this.props.history.push(`/dashboard/templates/${template.id}/tasks`);
+                    // this.props.getTemplatePositions(template.id);
                   }}>
                     {template.template_name}
                   </a>
