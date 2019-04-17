@@ -7,29 +7,15 @@ import { getSet,
   getBuddyDetails } from '../../actions';
 
 import SetHeader from '../sets/SetHeader';
-import SetTask from '../sets/SetTasks';
 import UserDetails from '../users/UserDetails';
+import TaskDetails from '../sets/SetTasks';
 
 
 class CurrentSequence extends Component {
   componentDidMount(){
     // console.log(this.props);
-    // console.log(this.props);
     this.props.getSet(this.props.match.params.id);
-
-
-    // this.props.getUserDetails(this.props.set.set.employee_id);
-    // this.props.getManagerDetails(this.props.set.set.manager_id);
-    // this.props.getBuddyDetails(this.props.set.set.buddy_id);
   }
-
-  // componentDidUpdate(){
-  //   // console.log(this.props);
-  //   this.props.getUserDetails(this.props.set.set.employee_id);
-  //   this.props.getManagerDetails(this.props.set.set.manager_id);
-  //   this.props.getBuddyDetails(this.props.set.set.buddy_id);
-  //   console.log(this.props)
-  // }
 
 
   renderUserDetails() {
@@ -48,15 +34,17 @@ class CurrentSequence extends Component {
   }
 
   renderSetTasks(){
-    console.log(this.props);
-    return this.props.set.tasks.map(taskInfo =>
-      <SetTask key={taskInfo.id} task = {taskInfo} />
-      )
+    // console.log(this.props);
+    return this.props.set.tasks.map(task =>{
+      // console.log(taskInfo.instructor_id);
+      return(
+        <TaskDetails key={task.id} task = {task} />);
+    });
   }
 
 
   render(){
-    // console.log(this.props);
+    console.log(this.props);
     if(!this.props.set){
       return(
         <div>
@@ -93,4 +81,3 @@ export default connect( mapStateToProps, {
   getUserDetails, 
   getManagerDetails,
   getBuddyDetails })(CurrentSequence);
-// export default CurrentSequence;
