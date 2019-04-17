@@ -76,7 +76,7 @@ class TaskDetails extends Component {
             <tr>
               <td>
                 <span style={{"paddingRight": "10px"}}>
-                  Task Notes:
+                  Notes:
                 </span>
                 <span>
                   {this.props.task.task_notes}
