@@ -9,28 +9,36 @@ class AllTasks extends Component {
     this.props.getAllTasks();
   }
 
+
+  renderTask(task){
+    return(
+      <div key={task.id}>
+        <div className="card-content green lighten-5 row"
+          style={{"marginBottom": "3px"}}>
+            <div className="col s12">
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      {task.description}
+                    </td>
+                    <td width="60">
+                      Edit
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+    )
+  }
+
   renderTasks(tasks){
     return tasks.tasks.map((task) => {
-      const editTaskUrl = '';
       return(
-        <div key={task.id}>
-          <div className="card-content green lighten-5 row"
-            style={{"marginBottom": "3px"}}>
-              <div className="col s12">
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>
-                        {task.description}
-                      </td>
-                      <td width="60">
-                        Edit
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-          </div>
+        <div>
+          {this.renderTask(task)}
         </div>
       )
     });
