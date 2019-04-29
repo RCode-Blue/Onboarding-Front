@@ -9,6 +9,7 @@ import Dashboard from './Dashboard';
 import TemplateList from './templates/CurrentTemplate';
 import SetsList from './sets/Sets';
 import CurrentSequence from './sequences/CurrentSequence';
+import AllTasks from './tasks/allTasks';
 
 const TemplateNew = () => <h2>TemplateNew</h2>;
 
@@ -26,11 +27,12 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header />
-            <Route exact path="/" component={Landing} />
+            <Route exact path = "/" component={Landing} />
             <Route exact path = "/dashboard" component={Dashboard} />
             <Route exact path = "/dashboard/templates/:id/tasks" component={TemplateList} />
             <Route exact path = "/tasklists" component={SetsList} />
             <Route path = "/tasklist/:id" component={CurrentSequence}></Route>
+            <Route path = "/tasks" component={AllTasks}></Route>
             <Route path="/templates/new" component={TemplateNew}/>
           </div>
         </BrowserRouter>

@@ -9,6 +9,7 @@ import userDetailsReducer from './userDetailsReducer';
 import managerDetailsReducer from './managerDetailsReducer';
 import buddyDetailsReducer from './buddyDetailsReducer';
 import instructorDetailsReducer from './instructorDetailsReducer';
+import getAllTasksReducer from './getAllTasksReducer';
 
 
 
@@ -21,5 +22,6 @@ export default combineReducers({
   user: userDetailsReducer,
   manager: managerDetailsReducer,
   buddy: buddyDetailsReducer,
-  instructor: instructorDetailsReducer
+  instructor: instructorDetailsReducer,
+  tasks: getAllTasksReducer
   });

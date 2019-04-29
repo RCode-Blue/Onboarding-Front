@@ -25,13 +25,14 @@ class CurrentSequence extends Component {
           <UserDetails/>
         </div>
       );
- 
   }
+
 
   renderSetHeader() {
     // console.log(this.props);
     return <SetHeader set={this.props.set.set}/>
   }
+
 
   renderSetTasks(){
     // console.log(this.props);
@@ -44,7 +45,7 @@ class CurrentSequence extends Component {
 
 
   render(){
-    console.log(this.props);
+    // console.log(this.props);
     if(!this.props.set){
       return(
         <div>
@@ -65,15 +66,10 @@ class CurrentSequence extends Component {
 
 
 function mapStateToProps(state){
-  // console.log(state);
-  // console.log(state.set);
-  
     return {
     set: state.set,
     tasks: state.tasks
   }
-
-
 }
 
 export default connect( mapStateToProps, { 

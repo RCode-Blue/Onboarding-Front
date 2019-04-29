@@ -1,24 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
+// import axios from 'axios';
 
 import {getInstructorDetails } from '../../actions';
 
 import TaskInstructorDetails from '../users/InstructorDetails';
 
 class TaskDetails extends Component {
-  async componentDidMount(){
-    // console.log(this.props);
-    // console.log("componentDidMount");
-
-
-    // this.props.getInstructorDetails(this.props.task.instructor_id);
-    
-  };
-
-  
-
-
   renderTaskDescription(){
     return(
       <div>
@@ -130,10 +118,7 @@ class TaskDetails extends Component {
 
 
   }
-
 }
-
-
 
 
 

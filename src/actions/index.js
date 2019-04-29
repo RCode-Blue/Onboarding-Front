@@ -8,7 +8,8 @@ import {
   GET_USER_DETAILS,
   GET_MANAGER_DETAILS,
   GET_BUDDY_DETAILS,
-  GET_INSTRUCTOR_DETAILS } from './types';
+  GET_INSTRUCTOR_DETAILS,
+  GET_ALL_TASKS } from './types';
 
 
 
@@ -40,7 +41,6 @@ export const getSets = (user_id) => async dispatch => {
   // console.log(res);
   dispatch({ type: GET_SETS, payload: res.data.sets });
 };
-
 
 
 export const getSet = (set_id) => async dispatch => {
@@ -79,4 +79,11 @@ export const getInstructorDetails = (user_id) => async dispatch => {
   // const res = await axios.get('/api/templates');
   // console.log(res);
   dispatch({ type: GET_INSTRUCTOR_DETAILS, payload: res.data });
+};
+
+
+export const getAllTasks = () => async dispatch => {
+  const res = await axios.get('/api/tasks');
+  // console.log(res);
+  dispatch({ type: GET_ALL_TASKS, payload: res.data});
 };

@@ -7,3 +7,4 @@ export const GET_USER_DETAILS = 'get_user_details';
 export const GET_MANAGER_DETAILS = 'get_manager_details';
 export const GET_BUDDY_DETAILS = 'get_buddy_details';
 export const GET_INSTRUCTOR_DETAILS = 'get_instructor_details';
+export const GET_ALL_TASKS = 'get_all_tasks';

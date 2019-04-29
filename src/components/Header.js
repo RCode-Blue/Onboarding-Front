@@ -47,6 +47,12 @@ class Header extends Component {
               Task Lists
               </a>
             </li>
+            <li id="nav-sets">
+              <a 
+              href="/tasks">
+              All Tasks
+              </a>
+            </li>
             <li><a href="/api/logout">Logout</a></li>
           </div>
         );

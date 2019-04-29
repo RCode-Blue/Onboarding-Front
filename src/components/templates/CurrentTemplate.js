@@ -25,7 +25,7 @@ class TemplateTasks extends Component {
   }
 
   renderTemplateTasks(){
-    console.log(this.props);
+    // console.log(this.props);
 
     return this.props.currentTemplate.positions.map((position) => {
       return (

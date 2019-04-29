@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import { getInstructorDetails } from '../../actions';
-import { timingSafeEqual } from 'crypto';
 
 
 
@@ -14,54 +13,43 @@ class TaskInstructorDetails extends Component {
     this.state = { currentInstructor: ''}
   }
 
-  async componentDidMount(){
-    // console.log(this.props.task.instructor_id);
-    // this.props.getInstructorDetails(this.props.task.instructor_id);
 
+  async componentDidMount(){
     await axios.get('/api/user/'+this.props.task.instructor_id).then(
       res => {
         this.setState({currentInstructor: res.data})
       }
     )
-
-    
-    console.log(this.state.currentInstructor);
+    // console.log(this.state.currentInstructor);
   }
-
   
 
   render(){
-    console.log(this.state);
-    // if(!this.props.instructor){
-    if(this.state.currentInstructor == ""){
+    // console.log(this.state);
+    if(this.state.currentInstructor === ""){
       return(
         <div>
           <i>Instructor Details loading...</i>
         </div>
       );}
-    return(
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <span style={{"paddingRight": "10px"}}>
-                  Instructor: 
-                </span>
-                <span>
-                  {this.state.currentInstructor.given_name} {this.state.currentInstructor.family_name}
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        
-        </table>
-
-        
-
-
-      </div>
-    )
+      return(
+        <div>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <span style={{"paddingRight": "10px"}}>
+                    Instructor: 
+                  </span>
+                  <span>
+                    {this.state.currentInstructor.given_name} {this.state.currentInstructor.family_name}
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      )
   }
 }
 

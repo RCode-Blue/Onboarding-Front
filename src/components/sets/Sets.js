@@ -11,7 +11,6 @@ class SetsList extends Component {
     const res = await axios.get('/api/getcurrentuser');
     this.props.getSets(res.data.user_id);
     this.props.getUserDetails(res.data.user_id);
-
   }
 
 
@@ -49,6 +48,7 @@ class SetsList extends Component {
     });
   }
 
+
   renderUserDetails(){
     // console.log(this.props);
     return(
@@ -63,6 +63,7 @@ class SetsList extends Component {
       </div>
     )
   }
+
 
   render(){
     // console.log(this.state);
@@ -81,7 +82,6 @@ class SetsList extends Component {
       <div>
         {this.renderUserDetails()}
         {this.renderSets()}
-        
       </div>
     );
   }
