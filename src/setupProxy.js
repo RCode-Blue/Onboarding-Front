@@ -4,5 +4,6 @@ module.exports = function(app) {
   app.use(proxy( '/login/google',   { target: 'http://localhost:5000/' }));
   app.use(proxy( '/api/*',          { target: 'http://localhost:5000/' }));
   app.use(proxy( '/api/user/*',     { target: 'http://localhost:5000/' }));
+  app.use(proxy( '/api/uses',       { target: 'http://localhost:5000/' }));
   app.use(proxy( '/api/tasklist/*', { target: 'http://localhost:5000/' }));
 };

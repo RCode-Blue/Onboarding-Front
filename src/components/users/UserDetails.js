@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getUserDetails, getManagerDetails, getBuddyDetails } from '../../actions'
+import { getUserDetails, getManagerDetails, getBuddyDetails } from '../../actions';
 // import Axios from 'axios';
 
 

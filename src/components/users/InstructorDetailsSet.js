@@ -1,3 +1,5 @@
+// Used to display instructor details as part of the SetTasks component
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 

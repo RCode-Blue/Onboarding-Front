@@ -5,14 +5,16 @@ import {
   GET_TEMPLATE_POSITIONS, 
   GET_SETS, 
   GET_SET, 
+  GET_ALL_USERS, 
   GET_USER_DETAILS,
   GET_MANAGER_DETAILS,
   GET_BUDDY_DETAILS,
   GET_INSTRUCTOR_DETAILS,
-  GET_ALL_TASKS } from './types';
+  GET_ALL_TASKS,
+  GET_TASK } from './types';
 
 
-
+// Gets currently logged-in user
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/getcurrentuser');
   // console.log(res);
@@ -50,9 +52,15 @@ export const getSet = (set_id) => async dispatch => {
 };
 
 
+export const getAllUsers = () => async dispatch => {
+  const res = await axios.get('api/users');
+  // console.log(res.data);
+  dispatch({ type: GET_ALL_USERS, payload: res.data });
+};
+
+
 export const getUserDetails = (user_id) => async dispatch => {
   const res = await axios.get('/api/user/'+user_id);
-  // const res = await axios.get('/api/templates');
   // console.log(res);
   dispatch({ type: GET_USER_DETAILS, payload: res.data });
 };
@@ -87,3 +95,13 @@ export const getAllTasks = () => async dispatch => {
   // console.log(res);
   dispatch({ type: GET_ALL_TASKS, payload: res.data});
 };
+
+
+export const getTask = (_id) => async dispatch => {
+  const res = await axios.get('/api/task?task_id='+_id);
+  // console.log(res);
+  dispatch({ type: GET_TASK, payload: res.data});
+};
+
+
+// export const putTask = 

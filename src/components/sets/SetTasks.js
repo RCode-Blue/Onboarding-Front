@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import {getInstructorDetails } from '../../actions';
 
-import TaskInstructorDetails from '../users/InstructorDetails';
+import TaskInstructorDetails from '../users/InstructorDetailsSet';
 
 class TaskDetails extends Component {
   renderTaskDescription(){
