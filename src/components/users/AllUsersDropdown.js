@@ -7,32 +7,38 @@ import Select from 'react-select';
 
 class AllUsersDropdown extends Component {
 
+  state = {
+    instructorId: null
+  }
+
+
   componentDidMount(){
     console.log(this.props);
     this.props.getAllUsers();
   }
 
 
-  renderAllUsers(){
-    // console.log(this.props.users.users);
+  handleOnChange(e){
+    // console.log(e.value);
+    this.setState({ instructorId: e.value});
+  }
 
-    // let userValues = this.props.users.users.map((user) =>
-      // <option key={user.id} value={user.id}>{user.given_name}</option>);
-      // return { value: user.id, label: user.given_name });
-    // console.log(userValues);
+
+  renderAllUsers(){
+    // console.log(this.props.users.users)
 
     let userVals = []
     this.props.users.users.map((user) =>
       userVals.push({label:user.given_name + " " + user.family_name, value: user.id})
       )
-
-
     // console.log(userVals);
       
     return(
       <div>
-        <Select options = {userVals}
-          value = {this.props.task.instructor_id}/>
+        <Select 
+        onChange = { e => this.handleOnChange(e)}
+          options = {userVals}
+          />
       </div>
     )
     
@@ -61,9 +67,10 @@ class AllUsersDropdown extends Component {
 }  
 
 function mapStateToProps(state){
-  // console.log(state);
+  console.log(state);
   return{
-    users: state.users
+    users: state.users,
+    instructorId: state.instructorId
   }
 };
 
