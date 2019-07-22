@@ -20,11 +20,12 @@ Current onboarding processes for new employees were done on paper. This presents
 </ul>
 
 ***
-<h2>Front End Details</h2>
+<h2>Built using</h2>
 <ul>
-<li>The front end was built using React and Redux</li>
-<li>React Router for routing</li>
-<li>Materialize-CSS is used for styling</li>
+<li>React</li>
+<li>Redux</li>
+<li>React Router</li>
+<li>Materialize-CSS</li>
 </ul>
 
 ***
