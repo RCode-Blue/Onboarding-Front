@@ -33,29 +33,31 @@ class Header extends Component {
         // console.log(this.props.auth.user_id);
 
 
-        return (
-          <div>
-            <li id="nav-templates">
-              <a href="/dashboard">Templates</a>
-            </li>
-            <li id="nav-sets">
-              <a 
-              href="/tasklists"
-              onClick = {() => {
-                this.props.getSets(this.props.auth.user_id)
-              }}>
-              Task Lists
-              </a>
-            </li>
-            <li id="nav-sets">
-              <a 
-              href="/tasks">
-              All Tasks
-              </a>
-            </li>
-            <li><a href="/api/logout">Logout</a></li>
-          </div>
-        );
+      return (
+        <div>
+          <li id="nav-templates">
+            <a href="/dashboard">
+            Templates
+            </a>
+          </li>
+          <li id="nav-sets">
+            <a 
+            href="/tasklists"
+            onClick = {() => {
+              this.props.getSets(this.props.auth.user_id)
+            }}>
+            Task Lists
+            </a>
+          </li>
+          <li id="nav-sets">
+            <a 
+            href="/tasks">
+            All Tasks
+            </a>
+          </li>
+          <li><a href="/api/logout">Logout</a></li>
+        </div>
+      );
     }
   }
 
