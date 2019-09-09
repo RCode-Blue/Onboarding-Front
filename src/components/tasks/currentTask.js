@@ -4,19 +4,26 @@ import { connect } from 'react-redux';
 import CurrentTaskInstructorDetails from '../users/InstructorDetailsCurrentTask';
 import AllUsersDropdown from '../users/AllUsersDropdown';
 
+import { editTask } from "../../actions";
+
 // import axios from 'axios';
 
 // import { getInstructorDetails } from '../../actions';
 
 class CurrentTask extends Component {
   constructor(props){
-    // console.log(props.task.instructor_id);
+    // console.log(props);
     super(props);
+  
+    this.instructorDropdownChange = this.instructorDropdownChange.bind(this);
 
     this.state = {
       isEdit: false,
+      instructorId: this.props.task.instructor_id,
       description: props.task.description
     }
+
+    // console.log(this.state);
 
     this.handleFieldChange = this.handleFieldChange.bind(this);
   }
@@ -44,15 +51,39 @@ class CurrentTask extends Component {
 
   handleFormSubmit = () => {
     // console.log("submitted");
-    console.log(this.state.description);
+    // console.log(this.state);
+    // console.log(this.handler);
+    console.log(this.props);
+    console.log(this.state);
+
+    let data = {
+      "task_id": this.props.task.id,
+      "task_name": this.props.task.task_name,
+      "task_description": this.state.description,
+      "instructor_id": this.state.instructorId,
+      "task_notes": this.props.task.task_notes
+    }
+    console.log(data);
+    this.props.editTask(data);
+    this.toggleEdit();
   }
 
   toggleEdit = () => {
+    // console.log(this.props);
     this.setState({
       isEdit: !this.state.isEdit
     });
   }
 
+  instructorDropdownChange = (instructorId) => {
+    console.log(instructorId+1);
+    console.log(this.state);
+    console.log(this.props);
+    this.setState({
+      instructorId: instructorId + 1
+    });
+    // console.log(this.state);
+  }
 
   renderCurrentTaskEdit(task){
     return(
@@ -71,7 +102,9 @@ class CurrentTask extends Component {
                     onChange={this.handleFieldChange} />
                 </td>
                 <td width="100">
-                  <AllUsersDropdown task={task}/>
+                  <AllUsersDropdown 
+                    task={task} 
+                    handleDropdownChange={this.instructorDropdownChange}/>
                   
                 </td>
                 <td width="30">
@@ -117,7 +150,7 @@ class CurrentTask extends Component {
                 </td>
 
                 <td width="100">
-                  <CurrentTaskInstructorDetails instructorId = {this.props.task.instructor_id}/>
+                  <CurrentTaskInstructorDetails instructorId = {this.state.instructorId}/>
                 </td>
 
                 <td width="50">
@@ -187,8 +220,8 @@ function mapStateToProps(state){
   // console.log(state);
   return { 
     tasks: state.tasks
-     };
+  };
 }
 
 // export default connect(mapStateToProps)(CurrentTask)
-export default connect(mapStateToProps)(CurrentTask);
+export default connect(mapStateToProps, {editTask})(CurrentTask);

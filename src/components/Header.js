@@ -9,9 +9,6 @@ class Header extends Component {
   renderContent(){
     // console.log(this.props);
     // console.log(this.props.auth);
-
-  
-
     // console.log(this.props.auth.user_id);
 
     switch (this.props.auth){

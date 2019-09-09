@@ -19,7 +19,7 @@ class SetsList extends Component {
     
     return this.props.sets.map((set) => {
       // console.log(this.props);
-      console.log(set);
+      // console.log(set);
       const setUrl = '/tasklist/'+set.set_id;
       return(
         <div key={set.set_id}>

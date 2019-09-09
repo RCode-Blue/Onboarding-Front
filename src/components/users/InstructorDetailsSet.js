@@ -12,6 +12,7 @@ import { getInstructorDetails } from '../../actions';
 class TaskInstructorDetails extends Component {
   constructor(props){
     super(props);
+    // console.log(props);
     this.state = { currentInstructor: ''}
   }
 
@@ -36,20 +37,14 @@ class TaskInstructorDetails extends Component {
       );}
       return(
         <div>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <span style={{"paddingRight": "10px"}}>
-                    Instructor: 
-                  </span>
-                  <span>
-                    {this.state.currentInstructor.given_name} {this.state.currentInstructor.family_name}
-                  </span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="row valign-wrapper" style={{"height": "10px"}}>
+            <div className="col s2" style={{"paddingRight": "5px"}}>
+              Instructor:
+            </div>
+            <div className="col s10" style={{"paddingRight": "5px"}}>
+            {this.state.currentInstructor.given_name} {this.state.currentInstructor.family_name}
+            </div>
+          </div>
         </div>
       )
   }
@@ -57,9 +52,9 @@ class TaskInstructorDetails extends Component {
 
 
 function mapStateToProps(state){
-  // console.log(state.instructor);
+  // console.log(state);
   return {
-    instructor: state.instructor
+    // instructor: state.instructor
   };
 }
 

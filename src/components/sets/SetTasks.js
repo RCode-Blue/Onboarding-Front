@@ -2,96 +2,124 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import axios from 'axios';
 
+import  CurrentSetTaskDetails  from '../tasks/currentSetTask';
 import {getInstructorDetails } from '../../actions';
 
 import TaskInstructorDetails from '../users/InstructorDetailsSet';
 
 class TaskDetails extends Component {
+  constructor(props){
+    // console.log(props)
+    super(props);
+    this.state = {
+      isEdit: false,
+      isComplete: props.task.completed,
+      completionDate: props.task.completionDate
+    }
+  }
+
+
   renderTaskDescription(){
     return(
       <div>
-        <div className="card-content row green lighten-5">
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <span style={{"paddingRight": "10px"}}>
-                    {this.props.task.task_position} 
-                  </span>
-                  <span>
-                    {this.props.task.task_description}
-                  </span>
-                </td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="row green lighten-5 valign-wrapper" style={{"height": "35px", "marginBottom": "10px", "marginTop": "25px"}}>
+          
+            <div className="col s1" style={{"paddingRight": "5px"}}>
+              {this.props.task.task_position} 
+            </div>
+            <div className="col s9" style={{"paddingRight": "5px"}}>
+              {this.props.task.task_description}
+            </div>
+            <div className="col s2" style={{"paddingRight": "5px"}}>
+              
+            </div>
+          
+        </div>
+      </div>
+    )
+  }
+
+  
+  renderTaskDetailsShow(){
+    // console.log(this.props.task);
+    return(
+      <div>
+        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
+          <div className="col s1" style = {{"paddingRight": "5px"}}>
+            Notes:
+          </div>
+          <div className="col s11" style = {{"paddingRight": "5px"}}>
+            {this.props.task.task_notes}
+          </div>
+        </div>
+        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
+          <div className="col s2" style = {{"paddingRight": "5px"}}>
+            Completed:
+          </div>
+          <div className="col s2" style = {{"paddingRight": "5px"}}>
+            <input type="checkbox"/>
+          </div>
+          <div className="col s4" style = {{"paddingRight": "5px"}}>
+            {this.props.task.completed}
+          </div>
+          <div className="col s2" style = {{"paddingRight": "5px"}}>
+            Completion date:
+          </div>
+          <div className="col s4" style = {{"paddingRight": "5px"}}>
+            {this.props.task.completion_date}
+          </div>
+        </div>
+      </div>
+    )
+  }
+ 
+
+  renderTaskDetailsEdit(){
+    return(
+      <div className="blue-grey lighten-5">
+        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
+          <div className="col s1" style = {{"paddingRight": "5px"}}>
+            Notes:
+          </div>
+          <div className="col s11" style = {{"paddingRight": "5px"}}>
+            {this.props.task.task_notes}
+          </div>
+        </div>
+        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
+          <div className="col s2" style = {{"paddingRight": "5px"}}>
+            Completed:
+          </div>
+          <div className="col s2" style = {{"paddingRight": "5px"}}>
+            
+          </div>
+          <div className="col s4" style = {{"paddingRight": "5px"}}>
+            {this.props.task.completed}
+          </div>
+          <div className="col s2" style = {{"paddingRight": "5px"}}>
+            Completion date:
+          </div>
+          <div className="col s4" style = {{"paddingRight": "5px"}}>
+            {this.props.task.completion_date}
+          </div>
+        </div>
+        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
+          <div className="col s12 center-align">
+            <button type="button">
+              Save
+            </button>
+          </div> 
         </div>
       </div>
     )
   }
 
 
-  renderTaskInstructor(){
+  renderTaskDetails(task){
+    // console.log(task)
+
     return(
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <span style={{"paddingRight": "10px"}}>
-                  Instructor:
-                </span>
-                <span>
-                    {this.props.instructor.given_name} {this.props.instructor.family_name}
-                </span>
-              </td>
-              <td></td>
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
-    )
-  }
-
-
-  renderTaskDetails(){
-    return(
-      <div>
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <span style={{"paddingRight": "10px"}}>
-                  Notes:
-                </span>
-                <span>
-                  {this.props.task.task_notes}
-                </span>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>
-                <span style={{"paddingRight": "10px"}}>
-                  Completed:
-                </span>
-                <span>
-                  {this.props.task.completed}
-                </span>
-              </td>
-              <td>
-                <span style={{"paddingRight": "10px"}}>
-                  Completion date:
-                </span>
-                <span>
-                  {this.props.task.completion_date}
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div key = {task.id}>
+        <CurrentSetTaskDetails task = {this.props.task}/>
       </div>
     )
   }
@@ -99,6 +127,7 @@ class TaskDetails extends Component {
 
   render(){
     // console.log(this.props);
+    const {task} = this.props;
     if(!this.props.task.instructor_id){
       return(
         <div>
@@ -112,7 +141,7 @@ class TaskDetails extends Component {
         {this.renderTaskDescription()}
         
         <TaskInstructorDetails task = {this.props.task}/>
-        {this.renderTaskDetails()}
+        {this.renderTaskDetails(task)}
       </div>
       );
 
@@ -122,13 +151,14 @@ class TaskDetails extends Component {
 
 
 
-function mapStateToProps(state){
+// function mapStateToProps(state){
   // console.log(state);
-  return {
+  // return {
     // instructor_id: state.instructor_id,
     // instructor: state.instructor
-  }
-}
+    // setTasks: state.set.tasks
+  // }
+// }
 
 
-export default connect( mapStateToProps, {getInstructorDetails})(TaskDetails);
+export default connect( null, {getInstructorDetails})(TaskDetails);

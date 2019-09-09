@@ -11,8 +11,13 @@ import {
   GET_BUDDY_DETAILS,
   GET_INSTRUCTOR_DETAILS,
   GET_ALL_TASKS,
-  GET_TASK } from './types';
+  GET_TASK, 
+  EDIT_TASK,
+  CHANGE_SET_TASK} from './types';
 
+
+// AXIOS GET
+// #region
 
 // Gets currently logged-in user
 export const fetchUser = () => async dispatch => {
@@ -104,4 +109,25 @@ export const getTask = (_id) => async dispatch => {
 };
 
 
-// export const putTask = 
+// #endregion
+
+
+// AXIOS PUT
+// #region
+
+export const editTask = (task) => async dispatch => {
+  // console.log();
+  const res = await axios.put("/api/task", task);
+  console.log(res);
+  dispatch({type: EDIT_TASK, payload: res.data})
+}
+
+export const changeSetTask = (setTask) => async dispatch => {
+  // console.log("changeSetTask");
+  const res = await axios.put('/api/usertask',setTask);
+  // console.log(res);
+  dispatch({type: CHANGE_SET_TASK, payload: res.data})
+};
+
+
+// #endregion
