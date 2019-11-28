@@ -6,27 +6,30 @@ import Select from 'react-select';
 // import Axios from 'axios';
 
 class AllUsersDropdown extends Component {
-
-  state = {
-    dropdownId: this.props.task.instructor_id-1
+  constructor(props){
+    super(props)
+    if(this.props.task){
+      this.state = {
+        dropdownId: this.props.task.instructor_id-1
+      }
+    }
+    this.state = {
+      dropdownId: 0
+    }
   }
 
 
+
   componentDidMount(){
-    // console.log(this.props);
+    // console.log(this);
     // console.log(this.state);
     this.props.getAllUsers();
   }
 
 
   handleOnChange(e){
-    // console.log(e);
-    // console.log(this.props.users);
-    // console.log(this.props.task.instructor_id);
-    // console.log(this.props.users.users[e.value-1])
     this.setState({ dropdownId: e.value-1});
     this.props.handleDropdownChange(e.value-1);
-    // console.log(this.state);
   }
 
 
@@ -56,7 +59,7 @@ class AllUsersDropdown extends Component {
 
 
   render(){
-    // console.log(this.props.users);
+    // console.log(this);
     if(!this.props.users){
       return(
         <div><i>Loading...</i></div>

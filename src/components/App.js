@@ -6,7 +6,8 @@ import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import TemplateList from './templates/CurrentTemplate';
+// import TemplateList from './templates/CurrentTemplate';
+import TemplateTasks from './templates/CurrentTemplate';
 import SetsList from './sets/Sets';
 import CurrentSequence from './sequences/CurrentSequence';
 import AllTasks from './tasks/allTasks';
@@ -29,7 +30,7 @@ class App extends Component {
             <Header />
             <Route exact path = "/" component={Landing} />
             <Route exact path = "/dashboard" component={Dashboard} />
-            <Route exact path = "/dashboard/templates/:id/tasks" component={TemplateList} />
+            <Route exact path = "/dashboard/templates/:id/tasks" component={TemplateTasks} />
             <Route exact path = "/tasklists" component={SetsList} />
             <Route path = "/tasklist/:id" component={CurrentSequence}></Route>
             <Route path = "/tasks" component={AllTasks}></Route>

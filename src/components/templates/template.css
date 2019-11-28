@@ -1,0 +1,25 @@
+.custom-template-header{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  color: white;
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+
+
+.material-icons.add:hover{
+  cursor: pointer;
+}
+
+.custom-templates-add__hovertext{
+  position: absolute;
+  z-index: 1;
+}
+
+.custom-add-button .custom-templates-add__hovertext{
+  visibility: hidden;
+}
+
+.custom-add-button:hover .custom-templates-add__hovertext{
+  visibility: visible;
+}

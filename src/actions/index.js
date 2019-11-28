@@ -12,8 +12,13 @@ import {
   GET_INSTRUCTOR_DETAILS,
   GET_ALL_TASKS,
   GET_TASK, 
+  GET_UNALLOCATED_TASKS,
   EDIT_TASK,
-  CHANGE_SET_TASK} from './types';
+  CHANGE_SET_TASK,
+  POST_NEW_TASK,
+  POST_NEW_SET,
+  POST_NEW_SEQUENCE,
+  POST_NEW_TEMPLATE} from './types';
 
 
 // AXIOS GET
@@ -51,8 +56,9 @@ export const getSets = (user_id) => async dispatch => {
 
 
 export const getSet = (set_id) => async dispatch => {
+  console.log("getSet");
   const res = await axios.get('/api/tasklist/'+set_id);
-  // console.log(res);
+  console.log(res);
   dispatch({ type: GET_SET, payload: res.data});
 };
 
@@ -89,13 +95,13 @@ export const getBuddyDetails = (user_id) => async dispatch => {
 
 export const getInstructorDetails = (user_id) => async dispatch => {
   const res = await axios.get('/api/user/'+user_id);
-  // const res = await axios.get('/api/templates');
-  // console.log(res);
+  console.log(res);
   dispatch({ type: GET_INSTRUCTOR_DETAILS, payload: res.data });
 };
 
 
 export const getAllTasks = () => async dispatch => {
+  // console.log("getAllTasks");
   const res = await axios.get('/api/tasks');
   // console.log(res);
   dispatch({ type: GET_ALL_TASKS, payload: res.data});
@@ -103,22 +109,28 @@ export const getAllTasks = () => async dispatch => {
 
 
 export const getTask = (_id) => async dispatch => {
+  // console.log("getTasks");
   const res = await axios.get('/api/task?task_id='+_id);
   // console.log(res);
   dispatch({ type: GET_TASK, payload: res.data});
 };
 
+//axios.get('/api/sets?employee_id='+user_id);
+export const getUnallocatedTasks = (allocated_task_ids) => async dispatch => {
+  const res = await axios.get('/api/unallocatedtasks?allocated_task_ids='+allocated_task_ids);
+  // console.log(res);
+  dispatch({ type: GET_UNALLOCATED_TASKS, payload: res.data})
+}
 
 // #endregion
 
 
 // AXIOS PUT
 // #region
-
 export const editTask = (task) => async dispatch => {
   // console.log();
   const res = await axios.put("/api/task", task);
-  console.log(res);
+  // console.log(res);
   dispatch({type: EDIT_TASK, payload: res.data})
 }
 
@@ -130,4 +142,32 @@ export const changeSetTask = (setTask) => async dispatch => {
 };
 
 
+// #endregion
+
+
+// AXIOS POST
+// #region
+export const postNewTask = (task) => async dispatch => {
+  const res = await axios.post("/api/task", task);
+  // console.log(res);
+  dispatch({type: POST_NEW_TASK, payload:res.data})
+};
+
+export const postNewSet = (set) => async dispatch => {
+  const res = await axios.post("/api/set", set);
+  console.log(res);
+  dispatch({type: POST_NEW_SET, payload:res.data})
+}
+
+export const postNewSequence = (set_id) => async dispatch => {
+  const res = await axios.post("/api/addsequence/"+set_id);
+  // console.log(res);
+  dispatch({type: POST_NEW_SEQUENCE, payload:res.data});
+}
+
+export const postNewTemplate = (template) => async dispatch => {
+  const res = await axios.post("/api/template", template);
+  // console.log(res);
+  dispatch({type: POST_NEW_TEMPLATE, payload:res.data})
+}
 // #endregion

@@ -32,18 +32,32 @@ Current onboarding processes for new employees were done on paper. This presents
 
 <h2>Installation</h2>
 <h4>Download and setup:</h4>
+
+Browse to the following url to download the code:<br />
 <code>
 https://github.com/RCode-Blue/Onboarding-Front.git
+</code>
+
+<br/>
+Browse to the root of the project:<br/>
+<code>
 cd Onboarding-Front
+</code>
+
+<br /><br />
+Install dependencies:<br/>
+<code>
 npm install
 </code>
 
+<br />
 <h4>To run:</h4>
 <code>
 npm run start
 </code>
 <p>browse to http://localhost:3000/</p>
 
+<br />
 <h4>To end:</h4>
-Type cmd-C
+Type <code>cmd-C</code>
 

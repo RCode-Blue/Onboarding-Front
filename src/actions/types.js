@@ -11,8 +11,16 @@ export const GET_BUDDY_DETAILS = "get_buddy_details";
 export const GET_INSTRUCTOR_DETAILS = "get_instructor_details";
 export const GET_ALL_TASKS = "get_all_tasks";
 export const GET_TASK = "get_task";
+export const GET_UNALLOCATED_TASKS = "get_unallocated_tasks";
 export const PUT_TASK = "put_task";
 
 // PUT
 export const CHANGE_SET_TASK = "change_set_task";
 export const EDIT_TASK = "edit_task";
+
+
+// POST
+export const POST_NEW_TASK = "post_new_task";
+export const POST_NEW_SET = "post_new_set";
+export const POST_NEW_SEQUENCE = "post_new_sequence";
+export const POST_NEW_TEMPLATE = "post_new_template";

@@ -56,14 +56,14 @@ class CurrentTask extends Component {
     console.log(this.props);
     console.log(this.state);
 
-    const data = {
+    let data = {
       "task_id": this.props.task.id,
       "task_name": this.props.task.task_name,
       "task_description": this.state.description,
       "instructor_id": this.state.instructorId,
       "task_notes": this.props.task.task_notes
     }
-    console.log(data);
+    // console.log(data);
     this.props.editTask(data);
     this.toggleEdit();
   }
@@ -75,15 +75,15 @@ class CurrentTask extends Component {
     });
   }
 
-  instructorDropdownChange = (instructorId) => {
-    console.log(instructorId+1);
+  // instructorDropdownChange = (instructorId) => {
+  //   console.log(instructorId+1);
   //   console.log(this.state);
   //   console.log(this.props);
-    this.setState({
-      instructorId: instructorId + 1
-    });
+  //   this.setState({
+  //     instructorId: instructorId + 1
+  //   });
   //   // console.log(this.state);
-  }
+  // }
 // #endregion
 
 // #region : RENDER
@@ -188,7 +188,7 @@ class CurrentTask extends Component {
 // #endregion
 
   render(){
-    // console.log(this);
+    // console.log(this.props);
     if(!this.props.task){
       return(
         <div>

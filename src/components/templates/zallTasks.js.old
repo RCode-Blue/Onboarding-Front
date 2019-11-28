@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { getAllTasks } from '../../actions';
 
 import CurrentTask from './currentTask';
-import NewTask from "./newTask";
 // import Select from 'react-select';
 
 
@@ -90,8 +89,7 @@ class AllTasks extends Component {
     // console.log(tasks);
     return (
       <div>
-        {this.renderHeader()}   
-        <NewTask/>     
+        {this.renderHeader()}
         {this.renderTasks(tasks)};
       </div>
     );

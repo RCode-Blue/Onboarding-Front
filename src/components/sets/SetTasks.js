@@ -44,28 +44,36 @@ class TaskDetails extends Component {
     // console.log(this.props.task);
     return(
       <div>
-        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
+        <div className="row valign-wrapper" 
+        style={{"marginBottom": "10px"}}>
           <div className="col s1" style = {{"paddingRight": "5px"}}>
             Notes:
           </div>
-          <div className="col s11" style = {{"paddingRight": "5px"}}>
+          <div className="col s11" 
+          style = {{"paddingRight": "5px"}}>
             {this.props.task.task_notes}
           </div>
         </div>
-        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
-          <div className="col s2" style = {{"paddingRight": "5px"}}>
+        <div className="row valign-wrapper" 
+        style={{"marginBottom": "10px"}}>
+          <div className="col s2" 
+          style = {{"paddingRight": "5px"}}>
             Completed:
           </div>
-          <div className="col s2" style = {{"paddingRight": "5px"}}>
+          <div className="col s2" 
+          style = {{"paddingRight": "5px"}}>
             <input type="checkbox"/>
           </div>
-          <div className="col s4" style = {{"paddingRight": "5px"}}>
+          <div className="col s4" 
+          style = {{"paddingRight": "5px"}}>
             {this.props.task.completed}
           </div>
-          <div className="col s2" style = {{"paddingRight": "5px"}}>
+          <div className="col s2" 
+          style = {{"paddingRight": "5px"}}>
             Completion date:
           </div>
-          <div className="col s4" style = {{"paddingRight": "5px"}}>
+          <div className="col s4" 
+          style = {{"paddingRight": "5px"}}>
             {this.props.task.completion_date}
           </div>
         </div>
@@ -77,32 +85,42 @@ class TaskDetails extends Component {
   renderTaskDetailsEdit(){
     return(
       <div className="blue-grey lighten-5">
-        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
-          <div className="col s1" style = {{"paddingRight": "5px"}}>
+        <div className="row valign-wrapper" 
+        style={{"marginBottom": "10px"}}>
+          <div className="col s1" 
+          style = {{"paddingRight": "5px"}}>
             Notes:
           </div>
-          <div className="col s11" style = {{"paddingRight": "5px"}}>
+          <div className="col s11" 
+          style = {{"paddingRight": "5px"}}>
             {this.props.task.task_notes}
           </div>
         </div>
-        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
-          <div className="col s2" style = {{"paddingRight": "5px"}}>
+        <div className="row valign-wrapper" 
+        style={{"marginBottom": "10px"}}>
+          <div className="col s2" 
+          style = {{"paddingRight": "5px"}}>
             Completed:
           </div>
-          <div className="col s2" style = {{"paddingRight": "5px"}}>
+          <div className="col s2" 
+          style = {{"paddingRight": "5px"}}>
             
           </div>
-          <div className="col s4" style = {{"paddingRight": "5px"}}>
+          <div className="col s4" 
+          style = {{"paddingRight": "5px"}}>
             {this.props.task.completed}
           </div>
-          <div className="col s2" style = {{"paddingRight": "5px"}}>
+          <div className="col s2" 
+          style = {{"paddingRight": "5px"}}>
             Completion date:
           </div>
-          <div className="col s4" style = {{"paddingRight": "5px"}}>
+          <div className="col s4" 
+          style = {{"paddingRight": "5px"}}>
             {this.props.task.completion_date}
           </div>
         </div>
-        <div className="row valign-wrapper" style={{"marginBottom": "10px"}}>
+        <div className="row valign-wrapper" 
+        style={{"marginBottom": "10px"}}>
           <div className="col s12 center-align">
             <button type="button">
               Save

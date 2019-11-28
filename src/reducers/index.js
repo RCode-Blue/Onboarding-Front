@@ -12,6 +12,9 @@ import buddyDetailsReducer from './buddyDetailsReducer';
 import instructorDetailsReducer from './instructorDetailsReducer';
 import getAllTasksReducer from './getAllTasksReducer';
 import getTaskReducer from './getTaskReducer';
+import postNewSetReducer from './postNewSetReducer';
+import postNewSequenceReducer from './postNewSequenceReducer'
+import getUnallocatedTasksReducer from './getUnallocatedTasksReducer'
 
 
 export default combineReducers({
@@ -26,5 +29,8 @@ export default combineReducers({
   buddy: buddyDetailsReducer,
   instructor: instructorDetailsReducer,
   tasks: getAllTasksReducer,
-  task: getTaskReducer
+  task: getTaskReducer,
+  new_set: postNewSetReducer,
+  new_sequence: postNewSequenceReducer,
+  unallocated_tasks: getUnallocatedTasksReducer
   });
