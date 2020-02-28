@@ -102,7 +102,8 @@ class TemplateTasks extends Component {
     this.state.currentTemplate.positions.map(
       (position) => {
         // console.log(position.position_no);
-        positionNos.push(parseInt(position.position_no))
+        positionNos.push(parseInt(position.position_no));
+        return(position);
       }
     )
 
@@ -124,7 +125,8 @@ class TemplateTasks extends Component {
         console.log(data);
         // return(data);
 
-        let res = await axios.post("/api/position", data);
+        let res = await axios.post("https://onb0ardingapp.azurewebsites.net/api/position", data);
+        // let res = await axios.post("/api/position", data);
         console.log(res);
       }
     )

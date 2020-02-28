@@ -53,8 +53,8 @@ class CurrentTask extends Component {
     // console.log("submitted");
     // console.log(this.state);
     // console.log(this.handler);
-    console.log(this.props);
-    console.log(this.state);
+    // console.log(this.props);
+    // console.log(this.state);
 
     const data = {
       "task_id": this.props.task.id,
@@ -63,7 +63,7 @@ class CurrentTask extends Component {
       "instructor_id": this.state.instructorId,
       "task_notes": this.props.task.task_notes
     }
-    console.log(data);
+    // console.log(data);
     this.props.editTask(data);
     this.toggleEdit();
   }

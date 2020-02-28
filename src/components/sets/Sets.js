@@ -8,7 +8,8 @@ import { getSets, fetchUser, getUserDetails, getSet } from '../../actions';
 class SetsList extends Component {
   async componentDidMount(){
     // console.log(this.props);
-    const res = await axios.get('/api/getcurrentuser');
+    const res = await axios.get('https://onb0ardingapp.azurewebsites.net/api/getcurrentuser');
+    // const res = await axios.get('/api/getcurrentuser');
     // console.log(res);
     this.props.getSets(res.data.user_id);
     this.props.getUserDetails(res.data.user_id);
@@ -16,11 +17,11 @@ class SetsList extends Component {
 
 
   renderSets(){
-    console.log(this);
+    // console.log(this);
     
     return this.props.sets.map((set) => {
       // console.log(this.props);
-      console.log(set);
+      // console.log(set);
       const setUrl = '/tasklist/'+set.set_id;
       return(
         <div key={set.set_id}>

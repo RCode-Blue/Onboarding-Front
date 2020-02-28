@@ -34,7 +34,7 @@ class App extends Component {
             <Route exact path = "/tasklists" component={SetsList} />
             <Route path = "/tasklist/:id" component={CurrentSequence}></Route>
             <Route path = "/tasks" component={AllTasks}></Route>
-            <Route path="/templates/new" component={TemplateNew}/>
+            <Route path = "/templates/new" component={TemplateNew}/>
           </div>
         </BrowserRouter>
       </div>

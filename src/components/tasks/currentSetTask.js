@@ -77,11 +77,11 @@ class CurrentSetTaskDetails extends Component{
   }
   
   handleFormSubmit = () => {
-    console.log(this);
+    // console.log(this);
     // this.formatDate = formatDate.bind(this);
 
-    let formattedDate = this.formatDate(this.state.completionDate);
-    console.log(formattedDate);
+    // let formattedDate = this.formatDate(this.state.completionDate);
+    // console.log(formattedDate);
 
     // Note: PostgreSQL takes date in the form: "YYYY, MM, DD"
     const data = {
@@ -97,7 +97,7 @@ class CurrentSetTaskDetails extends Component{
       "instructor_id": this.state.task.instructor_id,
       "task_notes": this.state.task.task_notes
     }
-    console.log(data);
+    // console.log(data);
     // console.log(this);
 
     

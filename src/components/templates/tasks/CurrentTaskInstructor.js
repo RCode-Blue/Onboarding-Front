@@ -15,9 +15,8 @@ class CurrentTaskInstructor extends Component {
 
   async componentDidMount(){
     // console.log(id)
-    // await this.props.getInstructorDetails(this.props.instructorId);
-    const res = await axios.get(`/api/user/+${this.props.id}`)
-    // let instructor = await this.props.getInstructorDetails(this.props.instructorId);
+    const res = await axios.get(`https://onb0ardingapp.azurewebsites.net/api/user/+${this.props.id}`)
+    // const res = await axios.get(`https://onb0arding.azurewebsites.net/api/user/+${this.props.id}`)
     this.setState({
       instructor: res.data.given_name + " " + res.data.family_name
     })

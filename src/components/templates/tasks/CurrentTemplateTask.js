@@ -40,7 +40,8 @@ class CurrentTemplateTask extends Component{
       'position_no': parseInt(this.props.position.position_no)
     }
     console.log(data);
-    axios.delete("/api/position", data);
+    // axios.delete("/api/position", data);
+    axios.delete("https://onb0ardingapp.azurewebsites.net/api/position", data);
     // console.log(res);
   }
 

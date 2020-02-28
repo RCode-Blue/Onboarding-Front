@@ -17,7 +17,7 @@ class Header extends Component {
 
       case false:
         return (
-          <li><a href="/login/google">Login with Google</a></li>
+          <li><a href="https://onb0ardingapp.azurewebsites.net/login/google">Login with Google</a></li>
         );
 
       default:
@@ -60,6 +60,7 @@ class Header extends Component {
 
   render(){
     // console.log(this.props)
+    // console.log(process.env);
     return(
      <nav>
       <div className="nav-wrapper deep-orange darken-4">
