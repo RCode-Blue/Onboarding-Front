@@ -7,7 +7,7 @@ import { getSets } from '../actions/index';
 
 class Header extends Component {
   renderContent(){
-    // console.log(this.props);
+    console.log(this);
     // console.log(this.props.auth);
     // console.log(this.props.auth.user_id);
 
@@ -59,7 +59,7 @@ class Header extends Component {
   }
 
   render(){
-    // console.log(this.props)
+    console.log(this);
     // console.log(process.env);
     return(
      <nav>

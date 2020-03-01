@@ -42,6 +42,7 @@ class CurrentTemplateTask extends Component{
     console.log(data);
     // axios.delete("/api/position", data);
     axios.delete("https://onb0ardingapp.azurewebsites.net/api/position", data);
+    // axios.delete("http://localhost:5000/api/position", data);
     // console.log(res);
   }
 

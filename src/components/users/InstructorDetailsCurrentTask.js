@@ -18,6 +18,7 @@ class CurrentTaskInstructorDetails extends Component {
     if(this.props.instructorId){
       // await axios.get('/api/user/'+this.props.instructorId).then(
       await axios.get('https://onb0ardingapp.azurewebsites.net/api/user/'+this.props.instructorId).then(
+      // await axios.get('http://localhost:5000/api/user/'+this.props.instructorId).then(
         res => {
           // console.log(res.data)
           this.setState({
