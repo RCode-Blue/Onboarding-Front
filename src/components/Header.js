@@ -17,8 +17,12 @@ class Header extends Component {
 
       case false:
         return (
-          <li><a href="https://onb0ardingapp.azurewebsites.net/login/google">Login with Google</a></li>
+          <li><a href="/login/google">Login with Google</a></li>
         );
+
+        // return (
+        //   <li><a href="https://onb0ardingapp.azurewebsites.net/login/google">Login with Google</a></li>
+        // );
 
       default:
         if (!this.props.auth){

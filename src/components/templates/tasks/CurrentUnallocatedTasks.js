@@ -36,8 +36,8 @@ class CurrentUnallocatedTasks extends Component{
   getInstructorDetails = async(id) => {
     // console.log(id);
     // console.log(this.props.instructor.given_name + " " + this.props.instructor.family_name)
-    // let instructor = await axios.get('/api/user/'+id)
-    let instructor = await axios.get('https://onb0ardingapp.azurewebsites.net/api/user/'+id)
+    let instructor = await axios.get('/api/user/'+id)
+    // let instructor = await axios.get('https://onb0ardingapp.azurewebsites.net/api/user/'+id)
     // let instructor = await axios.get('http://localhost:5000/api/user/'+id)
     
     console.log(instructor);
