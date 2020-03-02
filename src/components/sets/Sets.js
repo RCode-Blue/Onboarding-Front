@@ -8,8 +8,8 @@ import { getSets, fetchUser, getUserDetails, getSet } from '../../actions';
 class SetsList extends Component {
   async componentDidMount(){
     // console.log(this.props);
-    const res = await axios.get('/api/getcurrentuser');
-    // const res = await axios.get('https://onb0ardingapp.azurewebsites.net/api/getcurrentuser');
+    // const res = await axios.get('/api/getcurrentuser');
+    const res = await axios.get('https://onb0ardingapp.azurewebsites.net/api/getcurrentuser');
     // const res = await axios.get('http://localhost:5000/api/getcurrentuser');
     // console.log(res);
     this.props.getSets(res.data.user_id);
