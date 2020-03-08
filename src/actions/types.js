@@ -1,5 +1,6 @@
 // GET
 export const FETCH_USER = "fetch_user";
+export const USER_LOGIN_FE = "user_login_fe";  // Front-End
 export const GET_TEMPLATES = "get_templates";
 export const GET_TEMPLATE_POSITIONS = "get_template_positions";
 export const GET_SETS = "get_sets";

@@ -23,6 +23,9 @@ class App extends Component {
   }
 
   render() {
+    // console.log(this);
+    // console.log(process.env);
+    // console.log(process.env.NODE_ENV);
     return(
       <div className="container">
         <BrowserRouter>

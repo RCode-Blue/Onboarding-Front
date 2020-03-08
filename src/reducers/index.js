@@ -1,5 +1,6 @@
 // src/reducers/index.js
 import {combineReducers} from 'redux';
+// import userLoginFeReducer from './userLoginFeReducer'; //Front end
 import authReducer from './authReducer';
 import templateReducer from './templateReducer';
 import currentTemplateReducer from './currentTemplateReducer';
@@ -19,6 +20,7 @@ import getUnallocatedTasksReducer from './getUnallocatedTasksReducer'
 
 export default combineReducers({
   auth: authReducer,
+  // frontEndAuth: userLoginFeReducer,  // Front end
   templates: templateReducer,
   currentTemplate: currentTemplateReducer,
   sets: setsReducer,
