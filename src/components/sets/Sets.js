@@ -16,8 +16,8 @@ class SetsList extends Component {
     // this.props.getSets(res.data.user_id);
     // this.props.getUserDetails(res.data.user_id);
 
-    this.props.getSets(30);
-    this.props.getUserDetails(30);
+    this.props.getSets(12);
+    this.props.getUserDetails(12);
   }
 
 

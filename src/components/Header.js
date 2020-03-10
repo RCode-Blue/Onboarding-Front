@@ -66,9 +66,9 @@ class Header extends Component {
           <li><a href="https://pure-sands-57711.herokuapp.com/api/logout">Logout</a></li>
           */}
 
-          
+          {/*
           <li><a href="/api/logout">Logout</a></li>
-          
+          */}
 
         </div>
       );

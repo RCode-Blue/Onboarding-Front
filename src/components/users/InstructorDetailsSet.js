@@ -18,8 +18,8 @@ class TaskInstructorDetails extends Component {
 
 
   async componentDidMount(){
-    await axios.get('/api/user/'+this.props.task.instructor_id).then(
-    // await axios.get('https://onb0ardingapp.azurewebsites.net/api/user/'+this.props.task.instructor_id).then(
+    // await axios.get('/api/user/'+this.props.task.instructor_id).then(
+    await axios.get('https://onb0ardingapp.azurewebsites.net/api/user/'+this.props.task.instructor_id).then(
     // await axios.get('http://localhost:5000/api/user/'+this.props.task.instructor_id).then(
       res => {
         this.setState({currentInstructor: res.data})
